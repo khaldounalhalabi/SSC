@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.index');
 });
+
+
+
+Route::get('/test' , function (){
+    return view('front.article') ;
+})->name('test') ;

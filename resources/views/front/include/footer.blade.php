@@ -3,7 +3,7 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
-                        <a href="index.html"> <img src="img/ssc logo.png" alt=""> </a>
+                        <a href="index.html"> <img src="{{ asset('img') }}/ssc logo.png" alt=""> </a>
                         <p class="segoui">But when shot real her. Chamber her one visite removal six
                             sending himself boys scot exquisite existend an </p>
                         <p class="segoui">But when shot real her hamber her </p>
@@ -51,29 +51,30 @@
     </footer>
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js') }}/bootstrap.bundle.min.js"></script>
     <!-- jquery plugins here-->
     <!-- jquery -->
-    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="{{ asset('js') }}/jquery-1.12.1.min.js"></script>
     <!-- popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{{ asset('js') }}/popper.min.js"></script>
     <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js') }}/bootstrap.min.js"></script>
     <!-- easing js -->
-    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="{{ asset('js') }}/jquery.magnific-popup.js"></script>
     <!-- swiper js -->
-    <script src="js/swiper.min.js"></script>
+    <script src="{{ asset('js') }}/swiper.min.js"></script>
     <!-- swiper js -->
-    <script src="js/masonry.pkgd.js"></script>
+    <script src="{{ asset('js') }}/masonry.pkgd.js"></script>
     <!-- particles js -->
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('js') }}/owl.carousel.min.js"></script>
+    <script src="{{ asset('js') }}/jquery.nice-select.min.js"></script>
     <!-- swiper js -->
-    <script src="js/slick.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
+    <script src="{{ asset('js') }}/slick.min.js"></script>
+    <script src="{{ asset('js') }}/jquery.counterup.min.js"></script>
+    <script src="{{ asset('js') }}/waypoints.min.js"></script>
     <!-- custom js -->
-    <script src="js/custom.js"></script>
+    <script src="{{ asset('js') }}/custom.js"></script>
+    <script src="{{ asset('js') }}/scripts2.js"></script>
 </body>
 
 </html>
