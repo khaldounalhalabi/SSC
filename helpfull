@@ -1,0 +1,5 @@
+php artisan migrate:fresh
+php artisan db:seed AboutSeeder
+php artisan db:seed CarouselSeeder
+php artisan db:seed ContactSeeder
+php artisan db:seed ServiceSeeder

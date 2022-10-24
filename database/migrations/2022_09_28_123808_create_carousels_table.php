@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('carousels', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable() ;
+            $table->string('title_color')->default('white') ;
+            $table->string('image') ;
             $table->timestamps();
         });
     }

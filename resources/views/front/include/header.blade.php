@@ -22,7 +22,7 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('css') }}/styles2.css" rel="stylesheet" />
+        <link href="{{ asset('css') }}/styles2.css" rel="stylesheet" type="text/css"/>
 
 
 </head>
@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home"
+                        <a class="nav-link" href="#carouselExampleCaptions"
                             style="font-size:
                                 110%;">Home</a>
                     </li>
@@ -60,7 +60,7 @@
                                 110%;">Our Customers</a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('test') }}" style="font-size: 110%;">Contact</a>
+                        <a class="nav-link" href="{{ route('front.contact') }}" style="font-size: 110%;">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a style="font-size: 110%;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown"

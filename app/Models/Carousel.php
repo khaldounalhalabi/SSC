@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Carousel extends Model
 {
     use HasFactory;
+    protected $table = 'carousels';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+    protected $fillable = [
+        'id',
+        'title',
+        'title_color',
+        'image',
+    ];
 }

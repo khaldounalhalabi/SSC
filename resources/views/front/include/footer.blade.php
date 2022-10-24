@@ -4,16 +4,14 @@
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
                         <a href="index.html"> <img src="{{ asset('img') }}/ssc logo.png" alt=""> </a>
-                        <p class="segoui">But when shot real her. Chamber her one visite removal six
-                            sending himself boys scot exquisite existend an </p>
-                        <p class="segoui">But when shot real her hamber her </p>
+                        <p class="segoui">Of course our solutions will make your work easier </p>
+                        <p class="segoui">Maybe it will inspire you to ways that will improve your business </p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-xl-4">
                     <div class="single-footer-widget footer_2">
                         <h4 class="segoui">Newsletter</h4>
-                        <p class="segoui">Stay updated with our latest trends Seed heaven so said place winged over
-                            given forth fruit.
+                        <p class="segoui">Stay updated with our latest trends
                         </p>
                         <form action="#">
                             <div class="form-group">
@@ -39,10 +37,10 @@
                     <div class="single-footer-widget footer_2">
                         <h4>Contact us</h4>
                         <div class="contact_info">
-                            <p class="segoui"><span class="segoui"> Address :</span class="segoui"> Hath of it fly signs
-                                bear be one blessed after </p>
-                            <p class="segoui"><span class="segoui"> Phone :</span class="segoui"> +2 36 265 (8060)</p>
-                            <p class="segoui"><span class="segoui"> Email : </span class="segoui">info@colorlib.com </p>
+                            <p class="segoui"><span class="segoui"> Address :</span class="segoui">{{ $contact->city }} - {{ $contact->street }}</p>
+                            <p class="segoui"><span class="segoui"> Phone :</span class="segoui">{{$contact->phone}}</p>
+                            <p class="segoui"><span class="segoui"> Mobile :</span class="segoui">{{$contact->mobile}}</p>
+                            <p class="segoui"><span class="segoui"> Email : </span class="segoui">{{ $contact->email }}</p>
                         </div>
                     </div>
                 </div>

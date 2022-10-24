@@ -9,21 +9,21 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('img') }}/it1.jpg" class="d-block w-100" alt="...">
+            <img src="{{ $carousels[0]->image }}" class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h5 style="color: white">Networking and engineering solutions</h5>
+                <h5 style="color: {{ $carousels[0]->title_color }}">{{ $carousels[0]->title }}</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{asset('img')}}/it22.jpg" class="d-block w-100" alt="...">
+            <img src="{{ $carousels[1]->image }}" class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h5 style="color: white">Our Services For All Individuals And Enterprises</h5>
+                <h5 style="color: {{ $carousels[1]->title_color }}">{{ $carousels[1]->title }}</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('img') }}/it3.jpeg" class="d-block w-100" alt="...">
+            <img src="{{ $carousels[2]->image }}" class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h5 style="color: white">Make Your Work Easier</h5>
+                <h5 style="color: {{ $carousels[2]->title_color }}">{{ $carousels[2]->title }}</h5>
             </div>
         </div>
     </div>
@@ -45,20 +45,20 @@
         <div class="row">
             <div class="col-lg-4 col-md-12 col-12">
                 <div class="about-img">
-                    <img src="{{ asset('img') }}/about.jpg" alt="" class="img-fluid">
+                    <img src="{{ $about->image }}" alt="" class="img-fluid">
                 </div>
             </div>
             <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
                 <div class="about-text">
                     <h2 class="segoui">
-                        We Provide Best Quality <br> Services Ever
+                        {{ $about->title }}
                     </h2>
                     <p class="segoui">
-                        SSC including new software releases and the latest technology solutions. our staff high educated skills with supporting Microsoft products trained to a minimum of Microsoft Certified Professional (MCP) status.
-                        Maintenance Service Agreements with fixed & reasonable price contracted clearly
+                        {{ $about->short_description }}
                     </p>
-                    <a href="#" class="btn btn-primary segoui">Learn
-                        More</a>
+                    @if(isset($about->long_description))
+                    <a href="{{ route('front.about.more') }}"> <button class="btn-primary segoui" style="border-radius: 12px">Learn More</button></a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -81,30 +81,21 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="textimonial_iner owl-carousel">
+                        @foreach($services as $service)
                         <div class="col-lg-16 col-xl-8 col-sm-16 align-self-center" style="margin-left: 5%;">
                             <div class="testimonial_slider_text">
-                                <h4 class="segoui text-center" >Various Support Services</h4>
-                                <p>We offer technical support to various systems and all kind of devices and systems which guarantee to you the best way to protect you devices and system by certified engineers</p>
-                                <button class="btn text-white segoui" style="background-color: #e24c60; margin-left: 40%;">Read
-                                    More</button>
+                                <h4 class="segoui text-center">{{ $service->title }}</h4>
+                                <p class="text-center">{{ $service->short_description }}</p>
+                                @if(isset($service->long_description))
+                                <div class="text-center">
+                                <a href="{{ route('front.service.more' , ['id' => $service->id]) }}">
+                                    <button class="btn-danger text-white segoui text-center" style="background-color: #e24c60; border-radius: 12px">Read More</button>
+                                </a>
+                                </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="col-lg-16 col-xl-8 col-sm-16 align-self-center" style="margin-left: 5%;">
-                            <div class="testimonial_slider_text">
-                                <h4 class="segoui text-center">Management/Administration:</h4>
-                                <p>Computer hardware and software is becoming more sophisticated and prevalent. Full management of the increasingly complex interrelationships between these requires a large investment in both time and training. The costs for the customer in acquiring the necessary skill sets in-house, are often unable to be justified. The result of leaving a system to manage itself can be disastrous. DATABANK has considerable expertise in Total System Management and is able to offer this as part of an overall support package. With our high caliber consultants we are able to offer you up to date information and advice to give you peace of mind that your system is being well managed and is cost effective.</p>
-                                <button class="btn text-white segoui" style="background-color: #e24c60; margin-left: 40%;">Read
-                                    More</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-16 col-xl-8 col-sm-16 align-self-center" style="margin-left: 5%;">
-                            <div class="testimonial_slider_text">
-                                <h4 class="segoui text-center" >Communication:</h4>
-                                <p>All support staff are contacted using “on person” mobile communications. As well as facilitating office to engineer communication, DATABANK can also give immediate support by allowing customer access to the help desk or an engineer, so that many problems can be solved without the need for an onsite visit, therefore saving you time and money.</p>
-                                <button class="btn text-white segoui" style="background-color: #e24c60; margin-left: 40%;">Read
-                                    More</button>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
