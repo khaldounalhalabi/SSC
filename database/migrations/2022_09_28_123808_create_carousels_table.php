@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable() ;
             $table->string('title_color')->default('white') ;
-            $table->string('image') ;
+            $table->text('image')->nullable() ;
             $table->timestamps();
         });
     }

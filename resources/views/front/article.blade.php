@@ -30,7 +30,7 @@
                             {{ $long_description }}
                         </p>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center section-padding">
                         <img  src="{{ $long_description_sub_image }}">
                     </div>
                 </div>

@@ -32,7 +32,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background-color: white;">
         <div class="container" style="background-color: white;">
-            <a class="navbar-brand" href="#"><img src="{{ asset('img') }}/ssc logo.png" width="50%"
+            <a class="navbar-brand" href="{{ route('front.index') }}"><img src="{{ asset('img') }}/ssc logo.png" width="50%"
                     style="margin-left: -65px; margin-top:
                         -25px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#carouselExampleCaptions"
+                        <a class="nav-link" href="{{ route('front.index') }}"
                             style="font-size:
                                 110%;">Home</a>
                     </li>

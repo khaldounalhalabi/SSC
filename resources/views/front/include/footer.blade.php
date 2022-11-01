@@ -3,7 +3,7 @@
             <div class="row justify-content-between">
                 <div class="col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget footer_1">
-                        <a href="index.html"> <img src="{{ asset('img') }}/ssc logo.png" alt=""> </a>
+                        <a href="{{ route('front.index') }}"> <img src="{{ asset('img') }}/ssc logo.png" alt=""> </a>
                         <p class="segoui">Of course our solutions will make your work easier </p>
                         <p class="segoui">Maybe it will inspire you to ways that will improve your business </p>
                     </div>
