@@ -30,8 +30,7 @@
                                     <th scope="row">{{$c->id}}</th>
                                     <td>{{$c->title}}</td>
                                     <td>{{ $c->title_color }}</td>
-                                    <td><a href="{{ route('admin.carousel.editPage') }}"><button class="btn btn-primary">Edit</button></td>
-                                    <td><button class="btn btn-danger">Delete</button></td>
+                                    <td><a href="{{ route('admin.carousel.editPage' , ['id' => $c->id]) }}"><button class="btn btn-primary">Edit</button></td>
                                 </tr>
                             @endforeach
 

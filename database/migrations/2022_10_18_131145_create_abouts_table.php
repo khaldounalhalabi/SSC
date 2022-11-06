@@ -15,13 +15,16 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('image') ;
-            $table->string('title') ;
-            $table->string('short_description') ;
-            $table->string('long_description_title_color')->default('black') ;
+            $table->string('image' ) ;
+            $table->string('title' ) ;
+            $table->string('arabic_title' ) ;
+            $table->text('short_description') ;
+            $table->text('arabic_short_description') ;
+            $table->string('long_description_title_color' )->default('black') ;
             $table->text('long_description')->nullable() ;
-            $table->string('long_description_image')->nullable() ;
-            $table->string('long_description_sub_image')->nullable() ;
+            $table->text('arabic_long_description')->nullable() ;
+            $table->string('long_description_image' )->nullable() ;
+            $table->string('long_description_sub_image' )->nullable() ;
             $table->timestamps();
         });
     }

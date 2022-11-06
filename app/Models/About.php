@@ -12,13 +12,15 @@ class About extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
     protected $fillable = [
-        'id',
         'image',
         'title',
+        'arabic_title',
         'short_description',
-        'long_description_title_color' ,
-        'long_description' ,
-        'long_description_image' ,
-        'long_description_sub_image' ,
+        'arabic_short_description',
+        'long_description_title_color',
+        'long_description',
+        'arabic_long_description',
+        'long_description_image',
+        'long_description_sub_image',
     ];
 }

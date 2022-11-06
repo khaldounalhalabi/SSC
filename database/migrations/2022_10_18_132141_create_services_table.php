@@ -16,8 +16,11 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title') ;
+            $table->string('arabic_title') ;
             $table->string('short_description') ;
+            $table->string('arabic_short_description') ;
             $table->text('long_description')->nullable() ;
+            $table->text('arabic_long_description')->nullable() ;
             $table->string('long_description_title_color')->default('white') ;
             $table->string('long_description_image')->nullable() ;
             $table->string('long_description_sub_image')->nullable() ;

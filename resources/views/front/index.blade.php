@@ -9,19 +9,19 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ $carousels[0]->image }}" class="d-block w-100" alt="...">
+            <img src="{{ url('/storage') }}/{{ $carousels[0]->image }} " class="d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 style="color: {{ $carousels[0]->title_color }}">{{ $carousels[0]->title }}</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ $carousels[1]->image }}" class="d-block w-100" alt="...">
+            <img src="{{ url('/storage') }}/{{ $carousels[1]->image }}" class="d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 style="color: {{ $carousels[1]->title_color }}">{{ $carousels[1]->title }}</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ $carousels[2]->image }}" class="d-block w-100" alt="...">
+            <img src="{{ url('/storage') }}/{{ $carousels[2]->image }}" class="d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 style="color: {{ $carousels[2]->title_color }}">{{ $carousels[2]->title }}</h5>
             </div>
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-12 col-12">
                 <div class="about-img">
-                    <img src="{{ $about->image }}" alt="" class="img-fluid">
+                    <img src="{{ url('/storage') }}/{{ $about->image }}" alt="" class="img-fluid">
                 </div>
             </div>
             <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">

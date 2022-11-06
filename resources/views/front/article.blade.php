@@ -8,7 +8,7 @@
 </style>
         <header class="masthead"
         @if(isset($long_description_image))
-        style="background-image: url('{{ $long_description_image }}')"
+        style="background-image: url('{{ url('/storage') }}/{{ $long_description_image }}')"
         @endif
         >
             <div class="container position-relative px-4 px-lg-5">
@@ -31,7 +31,7 @@
                         </p>
                     </div>
                     <div class="text-center section-padding">
-                        <img  src="{{ $long_description_sub_image }}">
+                        <img  src="{{ url('/storage') }}/{{ $long_description_sub_image }}">
                     </div>
                 </div>
             </div>

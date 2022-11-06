@@ -17,10 +17,11 @@ class CarouselFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence() ,
+            'title' => $this->faker->sentence(),
+            'arabic_title' => $this->faker->sentence(),
             'title_color' => $this->faker->colorName() ,
             'image' => $this->faker->imageUrl() ,
-            
+
         ];
     }
 }

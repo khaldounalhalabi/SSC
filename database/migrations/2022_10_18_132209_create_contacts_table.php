@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('map') ;
             $table->string('city') ;
+            $table->string('arabic_city') ;
             $table->string('street') ;
+            $table->string('arabic_street') ;
             $table->string('mobile') ;
             $table->string('phone') ;
             $table->string('email') ;

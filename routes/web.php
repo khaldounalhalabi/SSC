@@ -27,6 +27,8 @@ Route::prefix('admin')->namespace('App\Http\Controllers\admin')->group(function 
     Route::get('/carousel', 'CarouselController@index')->name('admin.carousel');
     Route::get('carousel/edit/{id}' , 'CarouselController@editPage')->name('admin.carousel.editPage') ;
     Route::post('carousel/doEdit/{id}' , 'CarouselController@doEdit')->name('admin.carousel.doEdit') ;
+    Route::get('about/edit', 'AboutController@editPage')->name('admin.about.editPage');
+    Route::post('about/doEdit', 'AboutController@doEdit')->name('admin.about.doEdit');
 }) ;
 
 

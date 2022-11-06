@@ -18,8 +18,10 @@ class ContactFactory extends Factory
     {
         return [
             'map' => $this->faker->sentence() ,
-            'city' =>$this->faker->city() ,
+            'city' =>$this->faker->city(),
+            'arabic_city' => $this->faker->city(),
             'street' => $this->faker->streetAddress() ,
+            'arabic_street' => $this->faker->streetAddress(),
             'mobile' => $this->faker->phoneNumber() ,
             'phone' => $this->faker->phoneNumber() ,
             'email' => $this->faker->email() ,
