@@ -19,10 +19,10 @@ class IndexController extends Controller
 
         $data['about'] = DB::table('abouts')->first() ;
         $data['services'] = DB::table('services')
-            ->orderBy('id', 'DESC')
+            ->orderBy('id', 'ASC')
             ->get();
 
-        
+
 
         return view('front.index')->with($data);
     }

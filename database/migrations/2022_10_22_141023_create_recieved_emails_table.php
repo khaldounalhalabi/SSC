@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable() ;
             $table->string('email') ;
             $table->string('subject')->nullable() ;
+            $table->date('date') ;
             $table->timestamps();
         });
     }

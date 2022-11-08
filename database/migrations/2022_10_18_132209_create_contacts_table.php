@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('map') ;
+            $table->text('map') ;
             $table->string('city') ;
             $table->string('arabic_city') ;
             $table->string('street') ;

@@ -24,14 +24,14 @@
         </li><!-- End F.A.Q Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-contact.html">
+            <a class="nav-link collapsed" href="{{ route('admin.service.index') }}">
                 <i class="bi bi-clipboard"></i>
                 <span>Our Services</span>
             </a>
         </li><!-- End Contact Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-register.html">
+            <a class="nav-link collapsed" href="{{ route('admin.contact.editPage') }}">
                 <i class="bi bi-card-list"></i>
                 <span>Contact</span>
             </a>

@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="pagetitle">
-        <h1 class="segoui text-center">Carousels Items</h1>
+        <h1 class="segoui text-center">Services</h1>
     </div><!-- End Page Title -->
     <section class="section">
         <div class="row">
@@ -19,18 +19,19 @@
                                 <tr>
                                     <th scope="col" class="myfont text-center">ID</th>
                                     <th scope="col" class="myfont text-center">Title</th>
-                                    <th scope="col" class="myfont text-center">Title Color </th>
+                                    <th scope="col" class="myfont text-center">Arabic Title</th>
                                     <th scope="col" class="text-center"></th>
                                     <th scope="col" class="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($carousels as $c)
+                            @foreach($services as $s)
                                    <tr>
-                                    <th scope="row">{{$c->id}}</th>
-                                    <td>{{$c->title}}</td>
-                                    <td>{{ $c->title_color }}</td>
-                                    <td><a href="{{ route('admin.carousel.editPage' , ['id' => $c->id]) }}"><button class="btn btn-primary">Edit</button></td>
+                                    <th scope="row">{{$s->id}}</th>
+                                    <td>{{$s->title}}</td>
+                                    <td>{{ $s->arabic_title }}</td>
+                                    <td><a href="{{ route('admin.service.editPage' , ['id' => $s->id]) }}"><button class="btn btn-primary">Edit</button></td>
+                                    <td><a href="#"><button class="btn btn-danger">Delete</button></td>
                                 </tr>
                             @endforeach
 

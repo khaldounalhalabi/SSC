@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\RecievedEmail;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -32,6 +33,7 @@ class SendMessageController extends Controller
             $message->email = $data['email'] ;
             $message->name = $data['name'] ;
             $message->subject = $data['subject'] ;
+            $message->date = Carbon::now('Asia/Damascus')->format('Y-m-d') ;
             $message->save() ;
 
             return back() ;

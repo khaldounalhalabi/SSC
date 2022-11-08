@@ -52,12 +52,14 @@ class CarouselController extends Controller
             $carousel = Carousel::find($id);
             $carousel->title = $request->title;
             $carousel->title_color = $request->title_color;
+
             if ($request->hasFile('image') != null) {
                 $destenation_path = 'carousles/images';
                 $image_name = $request->file('image')->hashName();
                 $carousel->image = $destenation_path . '/' . $image_name;
                 $path = $request->file('image')->storeAs('public/' . $destenation_path, $image_name);
             }
+
             $carousel->save();
 
             return redirect()->route('admin.carousel');

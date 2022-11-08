@@ -29,6 +29,11 @@ Route::prefix('admin')->namespace('App\Http\Controllers\admin')->group(function 
     Route::post('carousel/doEdit/{id}' , 'CarouselController@doEdit')->name('admin.carousel.doEdit') ;
     Route::get('about/edit', 'AboutController@editPage')->name('admin.about.editPage');
     Route::post('about/doEdit', 'AboutController@doEdit')->name('admin.about.doEdit');
+    Route::get('/services' , 'ServiceController@index')->name('admin.service.index') ;
+    Route::get('/service/{id}', 'ServiceController@editPage')->name('admin.service.editPage');
+    Route::post('/service/edit/{id}', 'ServiceController@doEdit')->name('admin.service.doEdit');
+    Route::get('/contact/edit', 'ContactController@editPage')->name('admin.contact.editPage');
+    Route::post('/contact/doEdit', 'ContactController@doEdit')->name('admin.contact.doEdit');
 }) ;
 
 
