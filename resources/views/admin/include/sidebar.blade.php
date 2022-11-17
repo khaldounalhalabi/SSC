@@ -38,14 +38,21 @@
         </li><!-- End Register Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-login.html">
+            <a class="nav-link collapsed" href="{{ route('admin.subscribers') }}">
                 <i class="bi bi-arrow-down-circle"></i>
-                <span>Footer</span>
+                <span>Subscribed Emails</span>
+            </a>
+        </li><!-- End Login Page Nav -->
+
+         <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('admin.inbox') }}">
+                <i class="bi bi-envelope"></i>
+                <span>Inbox</span>
             </a>
         </li><!-- End Login Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-login.html">
+            <a class="nav-link collapsed" href="{{ route('admin.logout') }}">
                 <i class="bi bi-box-arrow-in-right"></i>
                 <span>Logout</span>
             </a>

@@ -19,13 +19,10 @@ class MoreAbout extends Controller
             $data['long_description'] = $about->long_description ;
             $data['long_description_sub_image'] = $about->long_description_sub_image ;
 
-
-
             return view('front.article')->with($data) ;
 
         } catch (\Exception $e) {
-            $error = $e->getMessage();
-            return $error ;
+           return view('serverError') ;
         }
     }
 }

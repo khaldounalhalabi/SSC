@@ -12,8 +12,12 @@ class AboutController extends Controller
 {
     public function editPage()
     {
-        $data['about'] = DB::table('abouts')->first();
-        return view('admin.about.EditAbout')->with($data);
+        try {
+            $data['about'] = DB::table('abouts')->first();
+            return view('admin.about.EditAbout')->with($data);
+        } catch (\Exception $e) {
+            //throw $th;
+        }
     }
 
     public function doEdit(Request $request)
@@ -80,7 +84,8 @@ class AboutController extends Controller
             $data['about'] = $about;
             return back()->with($data);
         } catch (\Exception $e) {
-            return response($e->getMessage());
+            $data['error'] = $e->getMessage() ;
+            return view('serverError')->with($data) ;
         }
     }
 }

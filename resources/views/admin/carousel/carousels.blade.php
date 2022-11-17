@@ -21,7 +21,6 @@
                                     <th scope="col" class="myfont text-center">Title</th>
                                     <th scope="col" class="myfont text-center">Title Color </th>
                                     <th scope="col" class="text-center"></th>
-                                    <th scope="col" class="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody>

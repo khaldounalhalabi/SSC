@@ -11,19 +11,23 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(Carousel $carousel)
     {
-        $data['carousels'] = DB::table('carousels')
+        try {
+            $carousel->visitsCounter()->increment();
+
+            $data['carousels'] = DB::table('carousels')
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        $data['about'] = DB::table('abouts')->first() ;
-        $data['services'] = DB::table('services')
+            $data['about'] = DB::table('abouts')->first();
+            $data['services'] = DB::table('services')
             ->orderBy('id', 'ASC')
             ->get();
 
-
-
-        return view('front.index')->with($data);
+            return view('front.index')->with($data);
+        } catch (\Exception $e) {
+            return view('serverError') ;
+        }
     }
 }

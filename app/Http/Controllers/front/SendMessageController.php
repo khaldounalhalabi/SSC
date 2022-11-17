@@ -4,8 +4,11 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\RecievedEmail;
+use App\Models\User;
+use App\Notifications\RecievedEmailNotification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
 
 class SendMessageController extends Controller
@@ -36,11 +39,12 @@ class SendMessageController extends Controller
             $message->date = Carbon::now('Asia/Damascus')->format('Y-m-d') ;
             $message->save() ;
 
+            $users = User::all() ;
+            Notification::sendNow($users , new RecievedEmailNotification($message)) ;
             return back() ;
 
         } catch (\Exception $e) {
-            $error = $e->getMessage();
-            return view('login')->with('error', $error);
+           return view('serverError') ;
         }
     }
 }

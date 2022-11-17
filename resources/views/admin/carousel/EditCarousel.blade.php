@@ -9,6 +9,9 @@
                     <!-- General Form Elements -->
                     <form action="{{ route('admin.carousel.doEdit' , ['id' => $carousel->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @include('admin.include.error')
+                    @include('admin.include.internalError')
+                    @include('admin.include.message')
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Image Title</label>
                             <div class="col-sm-10">

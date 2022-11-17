@@ -13,14 +13,15 @@
                         <h4 class="segoui">Newsletter</h4>
                         <p class="segoui">Stay updated with our latest trends
                         </p>
-                        <form action="#">
+                        <form action="{{ route('front.subscribe') }}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder='Enter email address'
                                         onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Enter email address'">
+                                        onblur="this.placeholder = 'Enter email address'" name="email" id="name">
                                     <div class="input-group-append">
-                                        <button class="btn" type="button"><i class="bi bi-arrow-right"></i></button>
+                                        <button class="btn" type="submit"><i class="bi bi-arrow-right"></i></button>
                                     </div>
                                 </div>
                             </div>

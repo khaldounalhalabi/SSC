@@ -12,20 +12,30 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $data['services'] = DB::table('services')
-        ->orderBy('id', 'ASC')
-        ->get();
+        try {
+            $data['services'] = DB::table('services')
+                ->orderBy('id', 'ASC')
+                ->get();
 
-        return view('admin.service.services')->with($data) ;
+            return view('admin.service.services')->with($data);
+        } catch (\Exception $e) {
+            $data['error'] = $e->getMessage();
+            return view('serverError')->with($data);
+        }
     }
 
     public function editPage($id)
     {
-        $data['service'] = Service::find($id) ;
-        return view('admin.service.EditService')->with($data) ;
+        try {
+            $data['service'] = Service::find($id);
+            return view('admin.service.EditService')->with($data);
+        } catch (\Exception $e) {
+            $data['error'] = $e->getMessage() ;
+            return view('serverError')->with($data) ;
+        }
     }
 
-    public function doEdit($id , Request $request)
+    public function doEdit($id, Request $request)
     {
         try {
             $rules = [
@@ -81,7 +91,8 @@ class ServiceController extends Controller
             $data['service'] = $service;
             return back()->with($data);
         } catch (\Exception $e) {
-            return response($e->getMessage());
+            $data['error'] = $e->getMessage();
+            return view('serverError')->with($data);
         }
     }
 }

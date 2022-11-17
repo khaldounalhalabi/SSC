@@ -38,6 +38,9 @@
 </div>
 <!-- end carousel -->
 
+@include('admin.include.error')
+@include('admin.include.internalError')
+@include('admin.include.message')
 
 <!-- about -->
 <section id="about" class="about section-padding">
@@ -88,9 +91,9 @@
                                 <p class="text-center">{{ $service->short_description }}</p>
                                 @if(isset($service->long_description))
                                 <div class="text-center">
-                                <a href="{{ route('front.service.more' , ['id' => $service->id]) }}">
-                                    <button class="btn-danger text-white segoui text-center" style="background-color: #e24c60; border-radius: 12px">Read More</button>
-                                </a>
+                                    <a href="{{ route('front.service.more' , ['id' => $service->id]) }}">
+                                        <button class="btn-danger text-white segoui text-center" style="background-color: #e24c60; border-radius: 12px">Read More</button>
+                                    </a>
                                 </div>
                                 @endif
                             </div>

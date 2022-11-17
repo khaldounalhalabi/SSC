@@ -17,4 +17,17 @@ class Carousel extends Model
         'title_color',
         'image',
     ];
+
+
+    public function visitsCounter()
+    {
+        return visits($this);
+    }
+
+    public function visits()
+    {
+        return visits($this)->relation();
+    }
+
+
 }

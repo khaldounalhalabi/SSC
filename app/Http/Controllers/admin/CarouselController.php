@@ -13,11 +13,16 @@ class CarouselController extends Controller
 {
     public function index()
     {
-        $data['carousels'] = DB::table('carousels')
+        try {
+            $data['carousels'] = DB::table('carousels')
             ->orderBy('id', 'ASC')
             ->paginate(5);
 
-        return view('admin.carousel.carousels')->with($data);
+            return view('admin.carousel.carousels')->with($data);
+        } catch (\Exception $e) {
+            $data['error'] = $e->getMessage() ;
+            return view('serverError')->with($data) ;
+        }
     }
 
 
@@ -28,7 +33,8 @@ class CarouselController extends Controller
             $data['carousel'] = Carousel::find($id);
             return view('admin.carousel.EditCarousel')->with($data);
         } catch (\Exception $e) {
-            return response($e->getMessage()) ;
+            $data['error'] = $e->getMessage();
+            return view('serverError')->with($data);
         }
     }
 
@@ -65,7 +71,8 @@ class CarouselController extends Controller
             return redirect()->route('admin.carousel');
 
         } catch (\Exception $e) {
-            return response($e->getMessage());
+            $data['error'] = $e->getMessage();
+            return view('serverError')->with($data);
         }
     }
 

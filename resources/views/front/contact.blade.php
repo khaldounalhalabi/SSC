@@ -56,8 +56,9 @@
                             </div>
                         </div>
                     </div>
-                     @include('front.include.error')
-                @include('front.include.internalError')
+                    @include('admin.include.error')
+                    @include('admin.include.internalError')
+                    @include('admin.include.message')
                     <div class="form-group mt-3">
                         <button  style = "font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" type="submit" class="button btn-primary">Send Message</button>
                     </div>

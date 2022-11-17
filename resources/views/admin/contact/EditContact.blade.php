@@ -10,6 +10,9 @@
                     <form id="contactForm" action="{{ route('admin.contact.doEdit') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
+                        @include('admin.include.error')
+                        @include('admin.include.internalError')
+                        @include('admin.include.message')
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">City</label>
                             <div class="col-sm-10">
@@ -37,15 +40,15 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Arabic Street</label>
                             <div class="col-sm-10">
-                                <input dir="rtl" name="arabic_street" id="arabic_street" type="text" class="form-control"
-                                    value="{{ $contact->arabic_street }}">
+                                <input dir="rtl" name="arabic_street" id="arabic_street" type="text"
+                                    class="form-control" value="{{ $contact->arabic_street }}">
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Mobile</label>
                             <div class="col-sm-10">
-                                <input  name="mobile" id="mobile" type="text" class="form-control"
+                                <input name="mobile" id="mobile" type="text" class="form-control"
                                     value="{{ $contact->mobile }}">
                             </div>
                         </div>
@@ -53,7 +56,7 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Phone</label>
                             <div class="col-sm-10">
-                                <input  name="phone" id="phone" type="text" class="form-control"
+                                <input name="phone" id="phone" type="text" class="form-control"
                                     value="{{ $contact->phone }}">
                             </div>
                         </div>
@@ -61,25 +64,19 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
-                                <input  name="email" id="email" type="text" class="form-control"
+                                <input name="email" id="email" type="text" class="form-control"
                                     value="{{ $contact->email }}">
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            <label for="map" class="col-sm-2 col-form-label">Map (Here put the iframe from google map)</label>
+                            <label for="map" class="col-sm-2 col-form-label">Map (Here put the iframe from google
+                                map the text after the "src" word and between the double qutations)</label>
                             <div class="col-sm-10">
-                                <textarea id="map" name="map" form="contactForm"
-                                    class="form-control"
-                                    style="height: 100px">{{ $contact->map }}</textarea>
+                                <textarea id="map" name="map" form="contactForm" class="form-control"
+                                    style="height: 200px">{{ $contact->map }}</textarea>
                             </div>
                         </div>
-
-
-
-
-
-
 
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label"></label>
