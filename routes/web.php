@@ -32,12 +32,17 @@ Route::prefix('admin')->namespace('App\Http\Controllers\admin')->middleware('adm
     Route::get('/services', 'ServiceController@index')->name('admin.service.index');
     Route::get('/service/{id}', 'ServiceController@editPage')->name('admin.service.editPage');
     Route::post('/service/edit/{id}', 'ServiceController@doEdit')->name('admin.service.doEdit');
+    Route::view('service/add/page' , 'admin.service.addService')->name('admin.service.add.page') ;
+    Route::post('/service/add', 'ServiceController@add')->name('admin.service.add');
+    route::post('service/delete/{id}' , 'ServiceController@delete')->name('admin.service.delete') ;
     Route::get('/contact/edit', 'ContactController@editPage')->name('admin.contact.editPage');
     Route::post('/contact/doEdit', 'ContactController@doEdit')->name('admin.contact.doEdit');
     Route::get('/not/email/{emailId}/{notificationId}' , 'EmailController@getEmailFromNotifications')->name('admin.email.from.notification') ;
     Route::get('/logout' , 'AuthController@logout')->name('admin.logout') ;
     Route::get('/subscribers', 'EmailController@subscribers')->name('admin.subscribers');
     Route::get('/inbox', 'EmailController@inbox')->name('admin.inbox');
+    Route::view('/carousel/addPage' , 'admin.carousel.addCarousel')->name('admin.add.carousel.page') ;
+    Route::post('/carousel/add' , 'CarouselController@add')->name('admin.carousel.add') ;
 });
 Route::prefix('admin')->namespace('App\Http\Controllers\admin')->group(function () {
     Route::post('/login', 'AuthController@doLogin')->name('admin.login');
@@ -49,8 +54,9 @@ Route::prefix('admin')->namespace('App\Http\Controllers\admin')->group(function 
 Route::namespace('App\Http\Controllers\front')->group(function () {
     Route::view('/contact', 'front.contact')->name('front.contact');
     Route::post('/contact/send', 'SendMessageController@send')->name('front.send.message');
-    Route::get('/', 'IndexController@index')->name('front.index');
+    Route::get('', 'IndexController@index')->name('front.index');
     Route::get('/about/learnmore', 'MoreAbout@get')->name('front.about.more');
-    Route::get('service/{id}', 'ServiceMoreController@get')->name('front.service.more');
+    Route::get('/service/{id}', 'ServiceMoreController@get')->name('front.service.more');
     Route::post('/subscribe', 'SubscribeController@subscribe')->name('front.subscribe');
+    Route::get('/lang/{lang}' , 'LanguageController@setLanguage')->name('front.lang') ;
 });

@@ -82,7 +82,6 @@
 
                                         @include('admin.include.error')
                                         @include('admin.include.internalError')
-                                        @include('admin.include.message')
 
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100" type="submit">Login</button>

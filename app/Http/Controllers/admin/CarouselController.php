@@ -15,17 +15,15 @@ class CarouselController extends Controller
     {
         try {
             $data['carousels'] = DB::table('carousels')
-            ->orderBy('id', 'ASC')
-            ->paginate(5);
+                ->orderBy('id', 'ASC')
+                ->paginate(5);
 
             return view('admin.carousel.carousels')->with($data);
         } catch (\Exception $e) {
-            $data['error'] = $e->getMessage() ;
-            return view('serverError')->with($data) ;
+            $data['error'] = $e->getMessage();
+            return view('serverError')->with($data);
         }
     }
-
-
 
     public function editPage($id)
     {
@@ -38,8 +36,6 @@ class CarouselController extends Controller
         }
     }
 
-
-
     public function doEdit($id, Request $request)
     {
         try {
@@ -48,14 +44,55 @@ class CarouselController extends Controller
                 'title_color' => 'string|default:white|nullable',
             ];
 
-            $validator = Validator::make($request->only('title , title_color') , $rules) ;
+            $validator = Validator::make($request->only('title , title_color'), $rules);
 
-            if($validator->fails()){
-                $data['errors'] = $validator->errors() ;
-                return back()->with($data) ;
+            if ($validator->fails()) {
+                $data['errors'] = $validator->errors();
+                return back()->with($data);
             }
 
             $carousel = Carousel::find($id);
+            $carousel->title = $request->title;
+            $carousel->arabic_title = $request->arabic_title ;
+            $carousel->title_color = $request->title_color;
+
+            if ($request->hasFile('image') != null) {
+                $destenation_path = 'carousles/images';
+                $image_name = $request->file('image')->hashName();
+                $carousel->image = $destenation_path . '/' . $image_name;
+                $path = $request->file('image')->storeAs('public/' . $destenation_path, $image_name);
+            }
+
+            $carousel->save();
+
+            return redirect()->route('admin.carousel');
+        } catch (\Exception $e) {
+            $data['error'] = $e->getMessage();
+            return view('serverError')->with($data);
+        }
+    }
+
+    public function add(Request $request)
+    {
+        try {
+            if (DB::table('carousels')->count() == 3) {
+                $error = 'You Can Only Make 3 Carousels ';
+                return view('admin.carousel.addCarousel')->with('error', $error);
+            }
+
+            $rules = [
+                'title' => 'string|nullable|min:3|max:255',
+                'title_color' => 'string|default:white|nullable',
+            ];
+
+            $validator = Validator::make($request->only('title , title_color'), $rules);
+
+            if ($validator->fails()) {
+                $data['errors'] = $validator->errors();
+                return back()->with($data);
+            }
+
+            $carousel = new Carousel;
             $carousel->title = $request->title;
             $carousel->title_color = $request->title_color;
 
@@ -69,11 +106,9 @@ class CarouselController extends Controller
             $carousel->save();
 
             return redirect()->route('admin.carousel');
-
         } catch (\Exception $e) {
             $data['error'] = $e->getMessage();
             return view('serverError')->with($data);
         }
     }
-
 }

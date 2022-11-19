@@ -51,7 +51,13 @@ class ContactController extends Controller
                 return back()->with($data);
             }
 
-            $contact = Contact::first();
+
+
+            if (Contact::first() != null) {
+                $contact = Contact::first();
+            } else {
+                $contact = new Contact;
+            }
 
             $contact->street = $request->street;
             $contact->arabic_street = $request->arabic_street;

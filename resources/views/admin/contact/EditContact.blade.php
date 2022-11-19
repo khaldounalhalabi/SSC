@@ -17,7 +17,7 @@
                             <label for="inputText" class="col-sm-2 col-form-label">City</label>
                             <div class="col-sm-10">
                                 <input name="city" id="city" type="text" class="form-control"
-                                    value="{{ $contact->city }}">
+                                    value="@if (isset($contact->city)) {{ $contact->city }} @endif">
                             </div>
                         </div>
 
@@ -25,7 +25,7 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Arabic City</label>
                             <div class="col-sm-10">
                                 <input dir="rtl" name="arabic_city" id="arabic_city" type="text" class="form-control"
-                                    value="{{ $contact->arabic_city }}">
+                                    value="@if (isset($contact->arabic_city)) {{ $contact->arabic_city }} @endif">
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Street</label>
                             <div class="col-sm-10">
                                 <input name="street" id="street" type="text" class="form-control"
-                                    value="{{ $contact->street }}">
+                                    value="@if (isset($contact->street)) {{ $contact->street }} @endif">
                             </div>
                         </div>
 
@@ -41,7 +41,8 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Arabic Street</label>
                             <div class="col-sm-10">
                                 <input dir="rtl" name="arabic_street" id="arabic_street" type="text"
-                                    class="form-control" value="{{ $contact->arabic_street }}">
+                                    class="form-control"
+                                    value="@if (isset($contact->arabic_street)) {{ $contact->arabic_street }} @endif">
                             </div>
                         </div>
 
@@ -49,7 +50,7 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Mobile</label>
                             <div class="col-sm-10">
                                 <input name="mobile" id="mobile" type="text" class="form-control"
-                                    value="{{ $contact->mobile }}">
+                                    value="@if (isset($contact->mobile)) {{ $contact->mobile }} @endif">
                             </div>
                         </div>
 
@@ -57,7 +58,7 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Phone</label>
                             <div class="col-sm-10">
                                 <input name="phone" id="phone" type="text" class="form-control"
-                                    value="{{ $contact->phone }}">
+                                    value="@if (isset($contact->phone)) {{ $contact->phone }} @endif">
                             </div>
                         </div>
 
@@ -65,7 +66,7 @@
                             <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
                                 <input name="email" id="email" type="text" class="form-control"
-                                    value="{{ $contact->email }}">
+                                    value="@if (isset($contact->email)) {{ $contact->email }} @endif">
                             </div>
                         </div>
 
@@ -74,7 +75,11 @@
                                 map the text after the "src" word and between the double qutations)</label>
                             <div class="col-sm-10">
                                 <textarea id="map" name="map" form="contactForm" class="form-control"
-                                    style="height: 200px">{{ $contact->map }}</textarea>
+                                    style="height: 200px">
+                                        @if (isset($contact->map))
+                                        {{ $contact->map }}
+                                        @endif
+                                </textarea>
                             </div>
                         </div>
 

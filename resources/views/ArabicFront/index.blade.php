@@ -1,4 +1,4 @@
-@extends('front.layout')
+@extends('ArabicFront.layout')
 @section('content')
 <!-- carousel -->
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="width: auto;">
@@ -12,9 +12,11 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="@if(isset($carousels[0]->image)){{ url('/storage') }}/{{ $carousels[0]->image }}@endif" class="d-block w-100" alt="...">
+            <img src="@if(isset($carousels[0]->image)){{ url('/storage') }}/{{ $carousels[0]->image }}@endif"
+                class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h5 style="@if(isset($carousels[0]->title_color)){{ $carousels[0]->title_color }}@endif">@if(isset($carousels[0]->title)){{ $carousels[0]->title }}@endif</h5>
+                <h5 style="color: @if(isset($carousels[0]->title_color)){{ $carousels[0]->title_color }}@endif">
+                    @if(isset($carousels[0]->arabic_title)){{ $carousels[0]->arabic_title }}@endif</h5>
             </div>
         </div>
         <div class="carousel-item">
@@ -22,7 +24,7 @@
                 class="d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 style="color: @if(isset($carousels[1]->title_color)){{ $carousels[1]->title_color }}@endif">
-                    @if(isset($carousels[1]->title)){{ $carousels[1]->title }}@endif</h5>
+                    @if(isset($carousels[1]->arabic_title)){{ $carousels[1]->arabic_title }}@endif</h5>
             </div>
         </div>
         <div class="carousel-item">
@@ -30,17 +32,17 @@
                 class="d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 style="color: @if(isset($carousels[2]->title_color)){{ $carousels[2]->title_color }}@endif">
-                    @if(isset($carousels[2]->title)){{ $carousels[2]->title }}@endif</h5>
+                    @if(isset($carousels[2]->arabic_title)){{ $carousels[2]->arabic_title }}@endif</h5>
             </div>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden segoui">السابق</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden segoui">التالي</span>
     </button>
 </div>
 <!-- end carousel -->
@@ -50,7 +52,7 @@
 @include('admin.include.message')
 
 <!-- about -->
-<section id="about" class="about section-padding">
+<section id="about" class="about section-padding" dir="rtl">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-12 col-12">
@@ -62,14 +64,14 @@
             <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
                 <div class="about-text">
                     <h2 class="segoui">
-                        @if(isset($about->title)){{ $about->title }}@endif
+                        @if(isset($about->arabic_title)){{ $about->arabic_title }}@endif
                     </h2>
                     <p class="segoui">
-                        @if(isset($about->short_description)){{ $about->short_description }}@endif
+                        @if(isset($about->arabic_short_description)){{ $about->arabic_short_description }}@endif
                     </p>
-                    @if(isset($about->long_description))
+                    @if(isset($about->arabic_long_description))
                     <a href="{{ route('front.about.more') }}"> <button class="btn-primary segoui"
-                            style="border-radius: 12px">Learn More</button></a>
+                            style="border-radius: 12px">قراءة المزيد</button></a>
                     @endif
                 </div>
             </div>
@@ -84,8 +86,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="section-header text-center pb-5">
-                    <h2 class="segoui">Our Services</h2>
-                    <P class="segoui">Our basic services to give you a hint on what are we doing </P>
+                    <h2 class="segoui">خدماتنا</h2>
+                    <P class="segoui">بعض من خدماتنا الأساسية لإعطائك تلميحاً حول ما نقوم به</P>
                 </div>
             </div>
         </div>
@@ -96,13 +98,13 @@
                         @foreach($services as $service)
                         <div class="col-lg-16 col-xl-8 col-sm-16 align-self-center" style="margin-left: 5%;">
                             <div class="testimonial_slider_text">
-                                <h4 class="segoui text-center">{{ $service->title }}</h4>
-                                <p class="text-center">{{ $service->short_description }}</p>
-                                @if(isset($service->long_description))
+                                <h4 class="segoui text-center">{{ $service->arabic_title }}</h4>
+                                <p class="text-center">{{ $service->arabic_short_description }}</p>
+                                @if(isset($service->arabic_long_description))
                                 <div class="text-center">
                                     <a href="{{ route('front.service.more' , ['id' => $service->id]) }}">
                                         <button class="btn-danger text-white segoui text-center"
-                                            style="background-color: #e24c60; border-radius: 12px">Read More</button>
+                                            style="background-color: #e24c60; border-radius: 12px">قراءة المزيد</button>
                                     </a>
                                 </div>
                                 @endif

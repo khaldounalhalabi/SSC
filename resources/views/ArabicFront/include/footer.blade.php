@@ -1,17 +1,17 @@
-<footer id='contact' class="footer-area" style="background-color: white;">
+<footer id='contact' class="footer-area" style="background-color: white;" dir="rtl">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-sm-6 col-md-4 col-xl-3">
                 <div class="single-footer-widget footer_1">
                     <a href="{{ route('front.index') }}"> <img src="{{ asset('img') }}/ssc logo.png" alt=""> </a>
-                    <p class="segoui">Of course our solutions will make your work easier </p>
-                    <p class="segoui">Maybe it will inspire you to ways that will improve your business </p>
+                    <p class="segoui">بالتأكيد حلولنا ستجعل من عملك أمراً أسهل</p>
+                    <p class="segoui">لكن من الممكن أن تدلك على طرق تقوم بتطوير عملك بوتيرة أسرع</p>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-xl-4">
                 <div class="single-footer-widget footer_2">
-                    <h4 class="segoui">Newsletter</h4>
-                    <p class="segoui">Stay updated with our latest trends
+                    <h4 class="segoui">خدمة البريد</h4>
+                    <p class="segoui">ابقى على علم باّخر التطورات و الأحداث في شركتنا
                     </p>
                     <form action="{{ route('front.subscribe') }}" method="post">
                         @csrf
@@ -38,14 +38,14 @@
                 <div class="single-footer-widget footer_2">
                     <h4>Contact us</h4>
                     <div class="contact_info">
-                        <p class="segoui"><span class="segoui"> Address :</span
+                        <p class="segoui"><span class="segoui"> العنوان :</span
                                 class="segoui">@if(isset($contact->city)){{ $contact->city }} - {{
                             $contact->street }}@endif</p>
-                        <p class="segoui"><span class="segoui"> Phone :</span
+                        <p class="segoui"><span class="segoui"> الهاتف :</span
                                 class="segoui">@if(isset($contact->phone)){{$contact->phone}}@endif</p>
-                        <p class="segoui"><span class="segoui"> Mobile :</span
+                        <p class="segoui"><span class="segoui"> الجوال :</span
                                 class="segoui">@if(isset($contact->mobile)){{$contact->mobile}}@endif</p>
-                        <p class="segoui"><span class="segoui"> Email : </span
+                        <p class="segoui"><span class="segoui"> البريد الالكتروني : </span
                                 class="segoui">@if(isset($contact->email)){{ $contact->email }}@endif</p>
                     </div>
                 </div>

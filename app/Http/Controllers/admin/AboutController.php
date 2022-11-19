@@ -16,7 +16,8 @@ class AboutController extends Controller
             $data['about'] = DB::table('abouts')->first();
             return view('admin.about.EditAbout')->with($data);
         } catch (\Exception $e) {
-            //throw $th;
+           $data['error'] = $e->getMessage() ;
+           return view('serverError')->with($data) ;
         }
     }
 
@@ -48,7 +49,11 @@ class AboutController extends Controller
                 return back()->with($data);
             }
 
-            $about = About::first();
+            if(About::first() != null){
+                $about = About::first();
+            } else {
+                $about = new About ;
+            }
             $about->title = $request->title;
             $about->arabic_title = $request->arabic_title;
             $about->short_description = $request->short_description;

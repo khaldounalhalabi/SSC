@@ -11,13 +11,17 @@ class SubscribeController extends Controller
     public function subscribe(Request $request)
     {
         try {
-            DB::table('newsletter_subscripers')->insert(['email' => $request->email ,
-            'created_at' => now() ,
-            'updated_at' => now()]) ;
-            return back() ;
+
+            DB::table('newsletter_subscripers')->insert([
+                'email' => $request->email,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+
+            return back();
         } catch (\Exception $e) {
-            $data['error'] = $e->getMessage() ;
-            return view('serverError') ;
+            $data['error'] = $e->getMessage();
+            return view('serverError');
         }
     }
 }

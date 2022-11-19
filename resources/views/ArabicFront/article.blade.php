@@ -1,4 +1,4 @@
-@extends('front.layout')
+@extends('ArabicFront.layout')
 @section('content')
 
 <style>
@@ -15,7 +15,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading segoui">
-                            <h1 style="color:{{ $long_description_title_color }} ; ">{{ $title }}</h1>
+                            <h1 style="color:{{ $long_description_title_color }} ; ">{{ $arabic_title }}</h1>
                         </div>
                     </div>
                 </div>
@@ -29,8 +29,8 @@
                         @include('admin.include.error')
                     @include('admin.include.internalError')
                     @include('admin.include.message')
-                        <p class="segoui text-center">
-                            {{ $long_description }}
+                        <p class="segoui text-center" dir="rtl">
+                            {{ $arabic_long_description }}
                         </p>
                     </div>
                     <div class="text-center section-padding">

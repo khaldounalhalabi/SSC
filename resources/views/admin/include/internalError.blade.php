@@ -1,7 +1,5 @@
 @if(isset($error))
-<ul class="alert alert-danger list-unstyled">
-    <li>
+<div class="alert alert-danger list-unstyled">
         {{ $error }}
-    </li>
-</ul>
+</div>
 @endif

@@ -1,4 +1,4 @@
-@extends('front.layout')
+@extends('ArabicFrontarabic_.layout')
 @section('content')
 
 <!-- ================ contact section start ================= -->
@@ -7,7 +7,7 @@
         <div class="d-none d-sm-block mb-5 pb-4">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <iframe style="width:100%" src="@if(isset($contact->map)){{ $contact->map }}@endif" width="600"
+                    <iframe style="width:100%" src="@if(isset($contact->arabic_map)){{ $contact->arabic_map }}@endif" width="600"
                         height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-12">
-                <h2 class="contact-title">Get in Touch</h2>
+                <h2 class="contact-title segoui">ابقَ على تواصل معنا</h2>
             </div>
             <div class="col-lg-8">
                 <form class="form-contact contact_form" action="{{ route('front.send.message') }}" method="post"
@@ -65,7 +65,7 @@
                     @include('admin.include.message')
                     <div class="form-group mt-3">
                         <button style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" type="submit"
-                            class="button btn-primary">Send Message</button>
+                            class="button btn-primary segoui">إرسال رسالة</button>
                     </div>
                 </form>
             </div>
@@ -73,8 +73,8 @@
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="bi bi-house"></i></span>
                     <div class="media-body">
-                        <h3>@if(isset($contact->city)){{ $contact->city }}@endif</h3>
-                        <p>@if(isset($contact->street)){{ $contact->street }}@endif</p>
+                        <h3>@if(isset($contact->arabic_city)){{ $contact->arabic_city }}@endif</h3>
+                        <p>@if(isset($contact->arabic_street)){{ $contact->arabic_street }}@endif</p>
                     </div>
                 </div>
                 <div class="media contact-info">
@@ -88,7 +88,7 @@
                     <span class="contact-info__icon"><i class="bi bi-envelope"></i></span>
                     <div class="media-body">
                         <h3>@if(isset($contact->email)){{ $contact->email }}@endif</h3>
-                        <p>Send us your query anytime!</p>
+                        <p class="segoui">أرسل لنا اي استفسار في أي وقت</p>
                     </div>
                 </div>
             </div>
