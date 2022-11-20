@@ -25,7 +25,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $data['contact'] = DB::table('contacts')->first();
-        // View::share($data) ;
+        $data['contact'] = DB::table('contacts')->first();
+        View::share($data) ;
     }
 }
