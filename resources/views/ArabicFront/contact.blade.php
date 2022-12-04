@@ -1,13 +1,13 @@
-@extends('ArabicFrontarabic_.layout')
+@extends('ArabicFront.layout')
 @section('content')
 
 <!-- ================ contact section start ================= -->
-<section class="contact-section section_padding">
+<section class="contact-section section_padding" dir="rtl">
     <div class="container">
         <div class="d-none d-sm-block mb-5 pb-4">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <iframe style="width:100%" src="@if(isset($contact->arabic_map)){{ $contact->arabic_map }}@endif" width="600"
+                    <iframe style="width:100%" src="@if(isset($contact->map)){{ $contact->map }}@endif" width="600"
                         height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -52,7 +52,7 @@ Route::prefix('admin')->namespace('App\Http\Controllers\admin')->group(function 
 
 
 Route::namespace('App\Http\Controllers\front')->group(function () {
-    Route::view('/contact', 'front.contact')->name('front.contact');
+    Route::get('/contact', 'ContactController@index')->name('front.contact');
     Route::post('/contact/send', 'SendMessageController@send')->name('front.send.message');
     Route::get('', 'IndexController@index')->name('front.index');
     Route::get('/about/learnmore', 'MoreAbout@get')->name('front.about.more');

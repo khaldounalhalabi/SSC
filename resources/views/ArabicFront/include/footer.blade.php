@@ -15,13 +15,13 @@
                     </p>
                     <form action="{{ route('front.subscribe') }}" method="post">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group" dir="rtl">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder='Enter email address'
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"
+                                <input dir="rtl" type="text" class="form-control segoui" placeholder='أدخل بريدك الاكتروني'
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'أدخل بريدك الالكتروني'"
                                     name="email" id="name">
                                 <div class="input-group-append">
-                                    <button class="btn" type="submit"><i class="bi bi-arrow-right"></i></button>
+                                    <button class="btn" type="submit"><i class="bi bi-arrow-left"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-xl-3 col-sm-6 col-md-4">
                 <div class="single-footer-widget footer_2">
-                    <h4>Contact us</h4>
+                    <h4>معلومات التواصل</h4>
                     <div class="contact_info">
                         <p class="segoui"><span class="segoui"> العنوان :</span
                                 class="segoui">@if(isset($contact->city)){{ $contact->city }} - {{

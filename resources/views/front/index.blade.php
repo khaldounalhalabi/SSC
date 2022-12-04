@@ -12,9 +12,11 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="@if(isset($carousels[0]->image))//{{ url('/storage') }}/{{ $carousels[0]->image }}@endif" class="d-block w-100" alt="...">
+            <img src="@if(isset($carousel[0]->image)){{ url('/storage') }}/{{ $carousels[0]->image }} @endif"
+                class="d-block w-100" alt="...">
             <div class="carousel-caption">
-                <h5 style="@if(isset($carousels[0]->title_color)){{ $carousels[0]->title_color }}@endif">@if(isset($carousels[0]->title)){{ $carousels[0]->title }}@endif</h5>
+                <h5 style="color: @if(isset($carousels[0]->title_color)){{ $carousels[0]->title_color }}@endif">
+                    @if(isset($carousels[0]->title)){{ $carousels[0]->title }}@endif</h5>
             </div>
         </div>
         <div class="carousel-item">
